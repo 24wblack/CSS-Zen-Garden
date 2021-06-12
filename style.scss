@@ -11,10 +11,9 @@
 
 
 $green: #475732;
-
 body {
 	display: grid;
-	grid-template-columns: repeat(4,25%);
+	grid-template-columns: repeat(4, 25%);
 	grid-template-rows: repeat(8, 12.5%);
 	text-align: center;
 }
@@ -22,6 +21,7 @@ body {
 	grid-column: 1/5;
 	padding: 30px;
 	grid-row-start: 3;
+	grid-template-areas: "intro" "sidebar" "main";
 }
 .wrapper {
 	grid-column: 1/5;
@@ -39,56 +39,78 @@ ul {
 .design-selection {
 	background-color: lightgrey;
 }
-.zen-resources {
-	ul {
-		li {
-			background-color: $green;
-			margin: 10px;
-			border-radius: 10px;
-			padding: 5px;
-			width: 130px;
+@media only screen and (max-width:766px) {
+	.zen-resources {
+		ul {
+			li {
+				background-color: #475732;
+				margin: 10px;
+				border-radius: 10px;
+				padding: 5px;
+				width: 130px;
+			}
 		}
 	}
+	.view-css {
+		position: absolute;
+		justify-content: center;
+		top: 120%;
+	}
+	.css-resources {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+	.zen-faq {
+		position: absolute;
+		top: 110%;
+		left: 55%;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+	.zen-submit {
+		position: absolute;
+		top: 100%;
+		left: 55%;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+	.zen-translations {
+		position: absolute;
+		top: 110%;
+		left: 0;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
 }
-.view-css {
-	position: absolute;
-	justify-content: center;
-	top: 120%;
+@media only screen and (min-width:767px) {
+	.page-wrapper {
+		width: 90%;
+		max-width: 1000px;
+		margin: 20px auto;
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-areas: "intro intro sidebar" "main main sidebar";
+	}
+	.intro {
+		grid-area: intro;
+		background: #678097;
+	}
+	.sidebar {
+		grid-area: sidebar;
+		background: #DED8CE;
+	}
+	.main {
+		grid-area: main;
+		background: #347C81;
+	}
 }
-.css-resources {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	margin: 0;
-	text-align: center;
-}
-.zen-faq {
-	position: absolute;
-	top: 110%;
-	left: 55%;
-	width: 100%;
-	margin: 0;
-	text-align: center;
-}
-.zen-submit {
-	position: absolute;
-	top: 100%;
-	left: 55%;
-	width: 100%;
-	margin: 0;
-	text-align: center;
-}
-.zen-translations {
-	position: absolute;
-	top: 110%;
-	left: 0;
-	width: 100%;
-	margin: 0;
-	text-align: center;
-}
-.intro{
-	content:url(/style-guide-template-parcel/style-guide-template/src/assets/branding/logo-ver-1.jpg);
- 	 max-width:320px;
-  }
 
