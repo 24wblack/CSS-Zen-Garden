@@ -10,6 +10,7 @@
 
 /* basic elements */
 
+/*small*/
 body{
 	display:grid;
 	grid-template-columns: repeat(4,25%);
